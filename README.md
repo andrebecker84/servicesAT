@@ -20,6 +20,11 @@
 
 <br/>
 
+[![Deploy on Render](https://img.shields.io/badge/Deploy-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://hospital-api-2a6k.onrender.com/actuator/health)
+[![Relatório Técnico](https://img.shields.io/badge/Relat%C3%B3rio%20T%C3%A9cnico-DR1--AT-0064E0?style=for-the-badge&logo=googledocs&logoColor=white)](https://github.com/andrebecker84/servicesAT/blob/main/doc/RELATORIO_AT.md)
+
+<br/>
+
 ![Java](https://img.shields.io/badge/Java-25-007396?style=flat-square&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.6-6DB33F?style=flat-square&logo=springboot&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-4169E1?style=flat-square&logo=postgresql&logoColor=white)
