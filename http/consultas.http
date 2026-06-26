@@ -1,0 +1,30 @@
+### ════════════════════════════════════════════════════════════════════════
+###  Consultas
+### ════════════════════════════════════════════════════════════════════════
+
+### Listar consultas (USER)  → 200
+GET {{baseUrl}}/consultas
+Authorization: Basic {{userAuth}}
+
+### Cadastrar consulta (ADMIN)  → 201
+POST {{baseUrl}}/consultas
+Authorization: Basic {{adminAuth}}
+Content-Type: application/json
+
+{
+  "dataConsulta": "2026-06-25T10:00:00",
+  "observacoes": "Consulta de retorno",
+  "pacienteId": 1,
+  "medicoId": 1
+}
+
+### Cadastrar consulta com paciente inexistente (ADMIN)  → 404
+POST {{baseUrl}}/consultas
+Authorization: Basic {{adminAuth}}
+Content-Type: application/json
+
+{
+  "dataConsulta": "2026-06-25T10:00:00",
+  "pacienteId": 9999,
+  "medicoId": 1
+}

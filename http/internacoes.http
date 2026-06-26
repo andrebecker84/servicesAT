@@ -1,0 +1,30 @@
+### ════════════════════════════════════════════════════════════════════════
+###  Internações
+### ════════════════════════════════════════════════════════════════════════
+
+### Listar internações (USER)  → 200
+GET {{baseUrl}}/internacoes
+Authorization: Basic {{userAuth}}
+
+### Registrar internação sem alta, paciente internado (ADMIN)  → 201
+POST {{baseUrl}}/internacoes
+Authorization: Basic {{adminAuth}}
+Content-Type: application/json
+
+{
+  "dataEntrada": "2026-06-25",
+  "quarto": "208-B",
+  "pacienteId": 2
+}
+
+### Registrar internação com alta (ADMIN)  → 201
+POST {{baseUrl}}/internacoes
+Authorization: Basic {{adminAuth}}
+Content-Type: application/json
+
+{
+  "dataEntrada": "2026-06-20",
+  "dataAlta": "2026-06-24",
+  "quarto": "115-A",
+  "pacienteId": 3
+}

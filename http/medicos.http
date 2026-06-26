@@ -1,0 +1,22 @@
+### ════════════════════════════════════════════════════════════════════════
+###  Médicos
+### ════════════════════════════════════════════════════════════════════════
+
+### Listar médicos (USER)  → 200
+GET {{baseUrl}}/medicos
+Authorization: Basic {{userAuth}}
+
+### Cadastrar médico (ADMIN)  → 201
+POST {{baseUrl}}/medicos
+Authorization: Basic {{adminAuth}}
+Content-Type: application/json
+
+{
+  "nome": "Dr. Gustavo Pinheiro",
+  "crm": "CRM-55667/SP",
+  "especialidade": "Endocrinologista"
+}
+
+### Ranking de médicos por nº de consultas, JPQL ordenado (USER)  → 200
+GET {{baseUrl}}/medicos/ranking
+Authorization: Basic {{userAuth}}

@@ -1,0 +1,50 @@
+### ════════════════════════════════════════════════════════════════════════
+###  Pacientes  ·  selecione o environment "local" no seu HTTP client
+###  admin = leitura + escrita + exclusão   ·   user = apenas leitura (GET)
+### ════════════════════════════════════════════════════════════════════════
+
+### Listar pacientes (USER)  → 200
+GET {{baseUrl}}/pacientes
+Authorization: Basic {{userAuth}}
+
+### Cadastrar paciente (ADMIN)  → 201
+# @name cadastrarPaciente
+POST {{baseUrl}}/pacientes
+Authorization: Basic {{adminAuth}}
+Content-Type: application/json
+
+{
+  "nome": "Roberto Nunes",
+  "cpf": "11122233399",
+  "dataNascimento": "1990-05-12",
+  "telefone": "(11) 90000-0000"
+}
+
+### Buscar paciente recém-criado por ID (USER)  → 200
+GET {{baseUrl}}/pacientes/{{cadastrarPaciente.response.body.$.id}}
+Authorization: Basic {{userAuth}}
+
+### Buscar paciente inexistente (USER)  → 404
+GET {{baseUrl}}/pacientes/9999
+Authorization: Basic {{userAuth}}
+
+### Validação: campos vazios (ADMIN)  → 400
+POST {{baseUrl}}/pacientes
+Authorization: Basic {{adminAuth}}
+Content-Type: application/json
+
+{ "nome": "", "cpf": "" }
+
+### Acesso sem autenticação  → 401
+GET {{baseUrl}}/pacientes
+
+### USER tentando cadastrar (sem permissão)  → 403
+POST {{baseUrl}}/pacientes
+Authorization: Basic {{userAuth}}
+Content-Type: application/json
+
+{ "nome": "X", "cpf": "00000000000", "dataNascimento": "2000-01-01" }
+
+### Remover paciente recém-criado (ADMIN)  → 204
+DELETE {{baseUrl}}/pacientes/{{cadastrarPaciente.response.body.$.id}}
+Authorization: Basic {{adminAuth}}

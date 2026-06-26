@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:18.4-alpine
+    container_name: hospital-postgres
+    environment:
+      POSTGRES_DB: hospitaldb
+      POSTGRES_USER: hospital_user
+      POSTGRES_PASSWORD: hospital_pass
+    ports:
+      - "5432:5432"
+    # PostgreSQL 18+ recomenda montar o volume em /var/lib/postgresql
+    # (os dados ficam em subdiretório versionado, ex.: /var/lib/postgresql/18/docker)
+    volumes:
+      - hospital_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hospital_user -d hospitaldb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  app:
+    build: .
+    container_name: hospital-app
+    ports:
+      - "8090:8090"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/hospitaldb
+      SPRING_DATASOURCE_USERNAME: hospital_user
+      SPRING_DATASOURCE_PASSWORD: hospital_pass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      # Bind em todas as interfaces — necessário para o mapeamento de porta do Docker
+      # alcançar a app (o isolamento de rede do container fornece a segurança)
+      SERVER_ADDRESS: 0.0.0.0
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  hospital_data:
