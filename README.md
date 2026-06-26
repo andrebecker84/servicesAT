@@ -34,6 +34,8 @@
 ![Build](https://img.shields.io/badge/build-success-16a34a?style=flat-square&logo=apachemaven&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-8957e5?style=flat-square)
 
+[![Relatório Técnico](https://img.shields.io/badge/Relat%C3%B3rio%20T%C3%A9cnico-DR1--AT-0064E0?style=for-the-badge&logo=googledocs&logoColor=white)](https://github.com/andrebecker84/servicesAT/blob/main/doc/RELATORIO_AT.md)
+
 <sub>Frontend React com vídeo em loop no hero · tipografia DM Sans + Outfit · ícones Tabler</sub>
 
 </div>
@@ -55,6 +57,7 @@
 11. [Deploy com Docker](#-deploy-com-docker)
 12. [Estrutura do Projeto](#-estrutura-do-projeto)
 13. [Créditos](#-créditos)
+14. [Relatório Técnico](https://github.com/andrebecker84/servicesAT/blob/main/doc/RELATORIO_AT.md)
 
 ---
 
