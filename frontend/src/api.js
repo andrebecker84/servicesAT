@@ -1,9 +1,10 @@
 const CREDENCIAIS = btoa('user:user123');
 const CREDENCIAIS_ADMIN = btoa('admin:admin123');
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8090';
 
 async function req(url, options = {}, admin = false) {
   const cred = admin ? CREDENCIAIS_ADMIN : CREDENCIAIS;
-  const res = await fetch('http://localhost:8090' + url, {
+  const res = await fetch(BASE_URL + url, {
     headers: {
       'Content-Type': 'application/json',
       'Authorization': 'Basic ' + cred,
@@ -38,4 +39,4 @@ export const listarInternacoes   = ()     => req('/internacoes');
 export const cadastrarInternacao = (body) => req('/internacoes', { method: 'POST', body: JSON.stringify(body) }, true);
 
 // ── Actuator ──────────────────────────────────────────────────────────────────
-export const health = () => fetch('http://localhost:8090/actuator/health').then(r => r.json());
+export const health = () => fetch(BASE_URL + '/actuator/health').then(r => r.json());
