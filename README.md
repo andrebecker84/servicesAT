@@ -409,7 +409,7 @@ servicesAT/
 
 O relatório documenta todos os **12 exercícios** e as **6 rúbricas** da avaliação, com trechos de código, evidências de execução e decisões de arquitetura.
 
-**[Acessar Relatório Técnico — DR1-AT](https://github.com/andrebecker84/servicesAT/blob/main/doc/RELATORIO_AT.md)**
+[![Relatório Técnico](https://img.shields.io/badge/Relat%C3%B3rio%20T%C3%A9cnico-DR1--AT-0064E0?style=for-the-badge&logo=googledocs&logoColor=white)](https://github.com/andrebecker84/servicesAT/blob/main/doc/RELATORIO_AT.md)
 
 ---
 
