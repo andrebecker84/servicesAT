@@ -25,7 +25,7 @@ const MODULOS = [
   { to: '/consultas',   label: 'Consultas',    Icon: IconCalendarCheck, desc: 'Registrar consultas entre pacientes e médicos' },
   { to: '/internacoes', label: 'Internações',  Icon: IconBed,           desc: 'Gerenciar internações e altas hospitalares' },
   { to: '/ranking',     label: 'Ranking',      Icon: IconTrophy,        desc: 'Médicos com maior número de atendimentos' },
-  { href: 'http://localhost:8090/actuator/health', label: 'Monitoramento', Icon: IconActivityHeartbeat, desc: 'Health check e status da aplicação (Actuator)', external: true },
+  { href: 'https://hospital-api-2a6k.onrender.com/actuator/health', label: 'Monitoramento', Icon: IconActivityHeartbeat, desc: 'Health check e status da aplicação (Actuator)', external: true },
 ];
 
 const DESTAQUES = [
