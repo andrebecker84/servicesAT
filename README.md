@@ -34,8 +34,6 @@
 ![Build](https://img.shields.io/badge/build-success-16a34a?style=flat-square&logo=apachemaven&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-8957e5?style=flat-square)
 
-[![Relatório Técnico](https://img.shields.io/badge/Relat%C3%B3rio%20T%C3%A9cnico-DR1--AT-0064E0?style=for-the-badge&logo=googledocs&logoColor=white)](https://github.com/andrebecker84/servicesAT/blob/main/doc/RELATORIO_AT.md)
-
 <sub>Frontend React com vídeo em loop no hero · tipografia DM Sans + Outfit · ícones Tabler</sub>
 
 </div>
@@ -404,6 +402,14 @@ servicesAT/
 > A pasta `http/` traz arquivos **`.http`** (Pacientes, Médicos, Consultas, Internações, Actuator)
 > prontos para o **IntelliJ HTTP Client** ou a extensão **REST Client** do VS Code, com
 > autenticação Basic já configurada em `http-client.env.json`.
+
+---
+
+## <img src="https://api.iconify.design/tabler/report-medical.svg?color=%230064E0" width="20" align="center" /> Relatório Técnico
+
+O relatório documenta todos os **12 exercícios** e as **6 rúbricas** da avaliação, com trechos de código, evidências de execução e decisões de arquitetura.
+
+**[Acessar Relatório Técnico — DR1-AT](https://github.com/andrebecker84/servicesAT/blob/main/doc/RELATORIO_AT.md)**
 
 ---
 
